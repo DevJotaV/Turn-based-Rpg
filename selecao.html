@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seleção de Classes</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1><center>Escolha seus herois</center></h1>
+    
+    <div id="personagens">
+        <div class="personagem" data-classe="guerreiro" onmouseover="mostrarStats('guerreiro')" onmouseout="limparStats()">
+            <img src="guerreiro.jpg" alt="Guerreiro" />
+            <p>Guerreiro</p>
+        </div>
+        <div class="personagem" data-classe="mago" onmouseover="mostrarStats('mago')" onmouseout="limparStats()">
+            <img src="mago.jpg" alt="Mago" />
+            <p>Mago</p>
+        </div>
+        <div class="personagem" data-classe="arqueiro" onmouseover="mostrarStats('arqueiro')" onmouseout="limparStats()">
+            <img src="arqueiro.jpg" alt="Arqueiro" />
+            <p>Arqueiro</p>
+        </div>
+        <div class="personagem" data-classe="ladino" onmouseover="mostrarStats('ladino')" onmouseout="limparStats()">
+            <img src="ladino.jpg" alt="Ladino" />
+            <p>Ladino</p>
+        </div>
+        <div class="personagem" data-classe="paladino" onmouseover="mostrarStats('paladino')" onmouseout="limparStats()">
+            <img src="paladino.jpg" alt="Paladino" />
+            <p>Paladino</p>
+        </div>
+        <div class="personagem" data-classe="monge" onmouseover="mostrarStats('monge')" onmouseout="limparStats()">
+            <img src="monge.jpg" alt="Monge" />
+            <p>Monge</p>
+        </div>
+        <div class="personagem bloqueado" data-classe="god-slayer" onmouseover="mostrarStats('god-slayer')" onmouseout="limparStats()">
+            <img src="god-slayer.jpg" alt="God Slayer" />
+            <p>God Slayer</p>
+        </div>
+    </div>
+
+    <p id="texto"></p>
+
+    <div id="status"></div>
+
+    <button onclick="voltarInicio()">Pagina inicial</button>
+    <button id="iniciarJogoBtn" onclick="iniciarFase()" disabled>Iniciar Jogo</button>        
+
+    <script src="jogo.js"></script>
+</body>
+</html>
+

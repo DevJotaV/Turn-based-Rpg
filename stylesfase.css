@@ -1,0 +1,211 @@
+body {
+    font-family: 'Press Start 2P', cursive;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #e74c3c;
+    text-shadow: 2px 2px #34495e;
+}
+
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.personagem-escolhido, .goblins {
+    background-color: #34495e;
+    border-radius: 10px;
+    padding: 20px;
+    width: 45%;
+    min-width: 300px;
+    margin-bottom: 20px;
+}
+
+.personagem {
+    background-color: #2c3e50;
+    border: 2px solid #e74c3c;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.personagem img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.personagem .info {
+    flex-grow: 1;
+}
+
+.personagem h3 {
+    margin: 0 0 5px 0;
+    color: #e74c3c;
+}
+
+.personagem p {
+    margin: 2px 0;
+    font-size: 0.8em;
+}
+
+.hp-bar {
+    width: 100%;
+    height: 10px;
+    background-color: #e74c3c;
+    margin-top: 5px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.hp-bar-inner {
+    height: 100%;
+    background-color: #2ecc71;
+    transition: width 0.3s ease-in-out;
+}
+
+@keyframes attack {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(10px); }
+    100% { transform: translateX(0); }
+}
+
+.attacking {
+    animation: attack 0.5s ease-in-out;
+}
+
+#menu-habilidades {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#menu-habilidades button {
+    font-family: 'Press Start 2P', cursive;
+    background-color: #e74c3c;
+    border: none;
+    color: #ecf0f1;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+}
+
+#menu-habilidades button:hover {
+    background-color: #c0392b;
+}
+
+#historico-combate {
+    background-color: #34495e;
+    border-radius: 10px;
+    padding: 20px;
+    max-height: 300px;
+    overflow-y: auto;
+    margin-top: 20px;
+}
+
+#historico-combate p {
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+
+.personagem.ativo {
+    outline: 3px solid #f39c12;
+    animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+    from {
+        box-shadow: 0 0 0 0 rgba(243, 156, 18, 0.7);
+    }
+    to {
+        box-shadow: 0 0 0 10px rgba(243, 156, 18, 0);
+    }
+}
+
+.personagem.derrotado {
+    opacity: 0.5;
+    filter: grayscale(100%);
+}
+
+#proximo-turno {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#proximo-jogador {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#proximo-jogador img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .personagem-escolhido, .goblins {
+        width: 100%;
+    }
+    
+    #menu-habilidades button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+#fim-batalha {
+    background-color: #34495e;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#fim-batalha h2 {
+    color: #e74c3c;
+    margin-bottom: 20px;
+}
+
+#fim-batalha button {
+    font-family: 'Press Start 2P', cursive;
+    background-color: #e74c3c;
+    border: none;
+    color: #ecf0f1;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+}
+
+#fim-batalha button:hover {
+    background-color: #c0392b;
+}
+
+.alvo-selecionavel {
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
+}
+
+.alvo-selecionavel:hover {
+    box-shadow: 0 0 15px rgba(255, 255, 0, 0.8);
+}
