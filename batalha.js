@@ -84,10 +84,11 @@ const goblins = {
     goblin1: { 
         nome: "Goblin 1", 
         vida: 500, mana: 0, 
-        ataque: 500, defesa: 5, 
+        ataque: 50, defesa: 5, 
         danoArcano: 0, defesaArcana: 5, 
         velocidade: 7,
         tipo: 'goblin',
+        vidaMaxima: 500,
         habilidades: {
             ataque: { nome: "Golpe de Clava", custo: 0, dano: 10, tipo: "físico" }
         }
@@ -95,10 +96,11 @@ const goblins = {
     goblin2: { 
         nome: "Goblin 2", 
         vida: 500, mana: 0, 
-        ataque: 500, defesa: 4, 
+        ataque: 50, defesa: 4, 
         danoArcano: 0, defesaArcana: 5, 
         velocidade: 6,
         tipo: 'goblin',
+        vidaMaxima: 500,
         habilidades: {
             ataque: { nome: "Golpe de Clava", custo: 0, dano: 10, tipo: "físico" }
         }
@@ -106,10 +108,11 @@ const goblins = {
     goblin3: { 
         nome: "Goblin 3", 
         vida: 500, mana: 0, 
-        ataque: 500, defesa: 6, 
+        ataque: 50, defesa: 6, 
         danoArcano: 0, defesaArcana: 5, 
         velocidade: 5,
         tipo: 'goblin',
+        vidaMaxima: 500,
         habilidades: {
             ataque: { nome: "Golpe de Clava", custo: 0, dano: 10, tipo: "físico" }
         }
@@ -141,7 +144,7 @@ function exibirGoblins() {
     const goblinsContainer = document.getElementById('goblins');
     goblinsContainer.innerHTML = '<h2>Goblins</h2>';
 
-    ordemTurnos.filter(personagem => personagem.tipo === 'goblin').forEach((goblin, index) => {
+    ordemTurnos.filter(personagem => personagem.tipo == 'goblin').forEach((goblin, index) => {
         const divGoblin = criarDivPersonagem(`goblin${index + 1}`, goblin);
         goblinsContainer.appendChild(divGoblin);
     });

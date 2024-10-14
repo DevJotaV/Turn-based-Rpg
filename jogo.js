@@ -81,3 +81,7 @@ inicializarEventos();
 function iniciarJogo() {
     navegarPara(PAGINAS.SELECAO)
 }
+
+function voltarInicio() {
+    navegarPara(PAGINAS.INICIO)
+}
